@@ -37,6 +37,13 @@ class PayloadNotificationBuilder
      *
      * @var null|string
      */
+    protected $image;
+
+    /**
+     * @internal
+     *
+     * @var null|string
+     */
     protected $sound;
 
     /**
@@ -166,6 +173,21 @@ class PayloadNotificationBuilder
     public function setIcon($icon)
     {
         $this->icon = $icon;
+
+        return $this;
+    }
+
+    /**
+     * Supported Android
+     * Indicates notification image.
+     *
+     * @param string $icon
+     *
+     * @return PayloadNotificationBuilder current instance of the builder
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
 
         return $this;
     }
@@ -342,7 +364,17 @@ class PayloadNotificationBuilder
      */
     public function getIcon()
     {
-        return $this->icon;
+        return $this->image;
+    }
+
+    /**
+     * Get Image.
+     *
+     * @return null|string
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
     /**
